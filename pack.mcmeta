@@ -1,0 +1,6 @@
+{
+	"pack": {
+		"pack_format": 1,
+		"description": "Force dead players into spectator mode for a week"
+	}
+}
