@@ -1,17 +1,17 @@
 # Scoreboard Objectives
-scoreboard objectives add constants dummy
-scoreboard objectives add time dummy
-scoreboard objectives add dead deathCount
-scoreboard objectives add deathTime dummy
-scoreboard objectives add elapsed dummy
-scoreboard objectives add remaining dummy
-scoreboard objectives add daysLeft dummy
-scoreboard objectives add hoursLeft dummy
-scoreboard objectives add minutesLeft dummy
-scoreboard objectives add secondsLeft dummy
+scoreboard objectives add ghosts_variables dummy
+scoreboard objectives add ghosts_dead deathCount
+scoreboard objectives add ghosts_deathTime dummy
+scoreboard objectives add ghosts_remaining dummy
+scoreboard objectives add ghosts_days dummy
+scoreboard objectives add ghosts_hours dummy
+scoreboard objectives add ghosts_minutes dummy
+scoreboard objectives add ghosts_seconds dummy
 
-# Scoreboard Constants
-scoreboard players set #daysDivisor constants 1728000
-scoreboard players set #hoursDivisor constants 72000
-scoreboard players set #minutesDivisor constants 1200
-scoreboard players set #secondsDivisor constants 20
+# Variables
+scoreboard players set #ghosts_time ghosts_variables 0
+scoreboard players set #ghosts_timeout ghosts_variables 0
+scoreboard players set #ghosts_dayTicks ghosts_variables 1728000
+scoreboard players set #ghosts_hourTicks ghosts_variables 72000
+scoreboard players set #ghosts_minuteTicks ghosts_variables 1200
+scoreboard players set #ghosts_secondTicks ghosts_variables 20

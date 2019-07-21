@@ -1,11 +1,12 @@
 # Scoreboard Objectives
-scoreboard objectives remove constants
-scoreboard objectives remove time
-scoreboard objectives remove dead
-scoreboard objectives remove deathTime
-scoreboard objectives remove elapsed
-scoreboard objectives remove remaining
-scoreboard objectives remove daysLeft
-scoreboard objectives remove hoursLeft
-scoreboard objectives remove minutesLeft
-scoreboard objectives remove secondsLeft
+scoreboard objectives remove ghosts_variables
+scoreboard objectives remove ghosts_dead
+scoreboard objectives remove ghosts_deathTime
+scoreboard objectives remove ghosts_remaining
+scoreboard objectives remove ghosts_days
+scoreboard objectives remove ghosts_hours
+scoreboard objectives remove ghosts_minutes
+scoreboard objectives remove ghosts_seconds
+
+# Remove spawn marker
+kill @e[type=minecraft:armor_stand,tag=ghosts_spawnmarker]
