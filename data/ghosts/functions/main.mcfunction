@@ -11,6 +11,13 @@ tag @a[tag=ghosts_wait] remove ghosts_setup
 # Set ghosts to spectator mode
 gamemode spectator @a[tag=ghosts_wait]
 
+# Check for resurrection rune
+execute as @a[tag=ghosts_wait] at @a[tag=ghosts_wait] if block ~ ~-1 ~ minecraft:gold_block if block ~-1 ~-1 ~ minecraft:redstone_block if block ~1 ~-1 ~ minecraft:redstone_block if block ~ ~-1 ~-1 minecraft:redstone_block if block ~ ~-1 ~1 minecraft:redstone_block if block ~-1 ~-1 ~-1 minecraft:diamond_block if block ~1 ~-1 ~-1 minecraft:diamond_block if block ~-1 ~-1 ~1 minecraft:diamond_block if block ~1 ~-1 ~1 minecraft:diamond_block if block ~-1 ~ ~-1 minecraft:redstone_torch[lit=true] if block ~1 ~ ~-1 minecraft:redstone_torch[lit=true] if block ~-1 ~ ~1 minecraft:redstone_torch[lit=true] if block ~1 ~ ~1 minecraft:redstone_torch[lit=true] run tag @s add ghosts_resurrect
+execute as @a[tag=ghosts_resurrect] run fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 minecraft:cobblestone
+execute as @a[tag=ghosts_resurrect] run fill ~-1 ~ ~-1 ~1 ~ ~1 minecraft:redstone_torch[lit=false] replace minecraft:redstone_torch[lit=true]
+tag @a[tag=ghosts_resurrect] add ghosts_revive
+tag @a[tag=ghosts_revive] remove ghosts_resurrect
+
 # Calculate remaining time
 execute as @a[tag=ghosts_wait] run scoreboard players operation @s ghosts_remaining = @s ghosts_deathTime
 execute as @a[tag=ghosts_wait] run scoreboard players operation @s ghosts_remaining += #ghosts_timeout ghosts_variables
